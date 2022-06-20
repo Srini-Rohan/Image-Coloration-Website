@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Image Colorizer</title>
+</head>
+
+<body>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <div class="container">
+    <!-- Main Menu -->
+    <nav class="main-nav">
+      <img src="./images/logo.png" alt="Logo" class="logo">
+      <ul class="main-menu">
+        <li><a href="">Home</a></li>
+        <li><a href="./color/index.html">Color Your Photo</a></li>
+        <li><a href="#" onclick="goPython()">Algorithm</a></li>
+      </ul>
+    </nav>
+    <!-- showcase -->
+    <header class="showcase">
+      <h2>IMAGE COLORIZER</h2>
+      <p>We use GANs to colorize image</p>
+    </header>
+    <!-- color image -->
+    <div class="middle">
+      <section class="clrimage">
+        <div>
+          <div class="image">
+            <img src="./images/bnw.png" alt="">
+          </div>
+
+          <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
+
+          <h3>AI Colorize! Free</h3>
+          <p>Colorize black and white pictures automatically and for free.
+          </p>
+          <a href="./color/index.html" class='btn'>Colorize Photo Now</a>
+        </div>
+
+      </section>
+      <div class="empty">
+        <p> We used Pix2Pix Model with 1 generator and 3 discriminators and trained on a custom data set to obtain colored image</p>
+        <a href="#" class="btn">
+          Learn More
+        </a>
+      </div>
+    </div>
+
+
+    <div class="para">
+      <h2>WHY CHOOSE US ?</h2>
+      <p>Powerful AI tools help you to colorize black and white images</p>
+    </div>
+    <section class="color">
+      <div class="content">
+        <h2>All features you may need to color your old black and white photos.</h2>
+        <p>Image Colorizer empowers you with AI capabilities to bring your old black and white a new life.</p>
+        <a href="#" class="btn">
+          Learn More
+        </a>
+      </div>
+      <div class="image1">
+
+      </div>
+    </section>
+    <footer>
+      <p>ImageColorizer &copy; 2022</p>
+    </footer>
+  </div>
+
+  <script src="./three.r119.min.js"></script>
+  <script src="./vanta.rings.min.js"></script>
+  <script>
+    VANTA.RINGS({
+      el: ".showcase",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 500.00,
+      minWidth: 400.00,
+      scale: 1.00,
+      scaleMobile: 1.00
+    })
+  </script>
+  <script>
+    let slider = document.querySelector('.slider');
+    let image = document.querySelector('.clrimage img')
+    slider.addEventListener('change', function(e) {
+      let a = slider.value;
+      image.style.clipPath = "polygon(" + String(a) + "% 0, 100% 0, 100% 100%, " + String(a) + "% 100%)";
+    })
+  </script>
+
+</body>
+
+</html>

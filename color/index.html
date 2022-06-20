@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <title>Image Colorizer</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Main Menu -->
+    <nav class="main-nav">
+      <img src="../images/logo.png" alt="Logo" class="logo">
+      <ul class="main-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../color/index.html">Color Your Photo</a></li>
+        <li><a href="#">Algorithm</a></li>
+      </ul>
+    </nav>
+    <!-- showcase -->
+    <header class="showcase">
+      <h2>IMAGE COLORIZER</h2>
+      <p>We use GANs to colorize image</p>
+    </header>
+    <section>
+      <div class="drag-area">
+        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+        <!-- {{text}} -->
+        <header>Drag & Drop to Upload Image</header>
+        <span>OR</span>
+        <button>Browse File</button>
+        <input type="file" hidden>
+      </div>
+    </section>
+
+
+    <footer>
+      <p>ImageColorizer &copy; 2022</p>
+    </footer>
+  </div>
+
+  <script src="../three.r119.min.js"></script>
+  <script src="../vanta.rings.min.js"></script>
+  <script src="./script.js"></script>
+  <script src="./FileSaver.js"></script>
+
+  <script>
+    VANTA.RINGS({
+      el: ".showcase",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 500.00,
+      minWidth: 400.00,
+      scale: 1.00,
+      scaleMobile: 1.00
+    })
+  </script>
+
+
+</body>
+
+</html>
